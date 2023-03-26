@@ -33,6 +33,7 @@ class ObjectDetectorProcessor(context: Context, options: ObjectDetectorOptionsBa
   VisionProcessorBase<List<DetectedObject>>(context) {
 
   private val detector: ObjectDetector = ObjectDetection.getClient(options)
+  // private val list: Catalog = Catalog()  TODO: UPDATE THIS PLACEHOLDER
 
   override fun stop() {
     super.stop()
@@ -56,8 +57,9 @@ class ObjectDetectorProcessor(context: Context, options: ObjectDetectorOptionsBa
       graphicOverlay.add(ObjectGraphic(graphicOverlay, result))
       result.labels.forEach {
         if (it.confidence >= 0.85 ) {
-          // placeholder psudocode:
-          // add result to list, if new list, create list, if list exists, update
+          val item = it.text
+          // TODO: update this section to call the correct fun from Catalog
+          // list.update(item)
         }
       }
     }
