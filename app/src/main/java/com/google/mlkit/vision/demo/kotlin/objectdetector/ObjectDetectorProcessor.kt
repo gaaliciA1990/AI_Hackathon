@@ -54,6 +54,12 @@ class ObjectDetectorProcessor(context: Context, options: ObjectDetectorOptionsBa
   override fun onSuccess(results: List<DetectedObject>, graphicOverlay: GraphicOverlay) {
     for (result in results) {
       graphicOverlay.add(ObjectGraphic(graphicOverlay, result))
+      result.labels.forEach {
+        if (it.confidence >= 0.85 ) {
+          // placeholder psudocode:
+          // add result to list, if new list, create list, if list exists, update
+        }
+      }
     }
   }
 
