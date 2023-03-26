@@ -5,7 +5,7 @@ import java.io.IOException
 
 class Catalog {
 
-    private var currentList = mutableMapOf<String, Array<String>>()
+    private var currentList = mutableMapOf<String, MutableSet<String>>()
 
     fun updateList(listName: String = "Generic", item: String): Boolean{
         //default value for listName for proof of concept purposes
@@ -13,16 +13,16 @@ class Catalog {
         //Check if the list not existed, create if true
         if (!currentList.containsKey(listName)){
             println("List not existed $listName")
-            currentList[listName] = arrayOf()
+            currentList[listName] = mutableSetOf()
         }
 
         //Then Append
         //println("List already existed $listName")
-        currentList[listName]?.plus(item)
+        currentList[listName]?.add(item)
         return true;
     }
 
-    fun getAllItems(listName:String = "Generic"): Array<String>? {
+    fun getAllItems(listName:String = "Generic"): MutableSet<String>? {
         return currentList[listName]
     }
 
