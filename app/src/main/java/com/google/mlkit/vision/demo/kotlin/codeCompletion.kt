@@ -12,7 +12,13 @@ import java.io.IOException
 
 
 fun main() {
-    val apiKey = "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"
+    val apiKey = System.getenv("OPEN_API_KEY")
+    println("API key: $apiKey")
+
+    if (apiKey == null || apiKey.isEmpty()) {
+        throw IllegalArgumentException("API key must be set in the OPEN_API_KEY environment variable.")
+    }
+
     val prompt = getUserInput()
     val completedChat = completeChat(apiKey, prompt)
     println(completedChat)
