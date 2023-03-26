@@ -43,6 +43,7 @@ import com.google.mlkit.vision.demo.BitmapUtils
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.R
 import com.google.mlkit.vision.demo.VisionImageProcessor
+import com.google.mlkit.vision.demo.catalog.Catalog
 import com.google.mlkit.vision.demo.kotlin.barcodescanner.BarcodeScannerProcessor
 import com.google.mlkit.vision.demo.kotlin.facedetector.FaceDetectorProcessor
 import com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor
@@ -407,7 +408,9 @@ class StillImageActivity : AppCompatActivity() {
           imageProcessor =
             ObjectDetectorProcessor(
               this,
-              objectDetectorOptions
+              objectDetectorOptions,
+              Catalog(),
+              {}
             )
         }
         OBJECT_DETECTION_CUSTOM -> {
@@ -423,7 +426,9 @@ class StillImageActivity : AppCompatActivity() {
           imageProcessor =
             ObjectDetectorProcessor(
               this,
-              customObjectDetectorOptions
+              customObjectDetectorOptions,
+              Catalog(),
+              {}
             )
         }
         CUSTOM_AUTOML_OBJECT_DETECTION -> {
@@ -439,7 +444,9 @@ class StillImageActivity : AppCompatActivity() {
           imageProcessor =
             ObjectDetectorProcessor(
               this,
-              customAutoMLODTOptions
+              customAutoMLODTOptions,
+              Catalog(),
+              {}
             )
         }
         FACE_DETECTION -> {

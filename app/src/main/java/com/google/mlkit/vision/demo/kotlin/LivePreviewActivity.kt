@@ -35,6 +35,7 @@ import com.google.mlkit.vision.demo.CameraSource
 import com.google.mlkit.vision.demo.CameraSourcePreview
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.R
+import com.google.mlkit.vision.demo.catalog.Catalog
 import com.google.mlkit.vision.demo.kotlin.barcodescanner.BarcodeScannerProcessor
 import com.google.mlkit.vision.demo.kotlin.facedetector.FaceDetectorProcessor
 import com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor
@@ -161,7 +162,7 @@ class LivePreviewActivity :
           Log.i(TAG, "Using Object Detector Processor")
           val objectDetectorOptions = PreferenceUtils.getObjectDetectorOptionsForLivePreview(this)
           cameraSource!!.setMachineLearningFrameProcessor(
-            ObjectDetectorProcessor(this, objectDetectorOptions)
+            ObjectDetectorProcessor(this, objectDetectorOptions, Catalog(), {})
           )
         }
         OBJECT_DETECTION_CUSTOM -> {
@@ -171,7 +172,7 @@ class LivePreviewActivity :
           val customObjectDetectorOptions =
             PreferenceUtils.getCustomObjectDetectorOptionsForLivePreview(this, localModel)
           cameraSource!!.setMachineLearningFrameProcessor(
-            ObjectDetectorProcessor(this, customObjectDetectorOptions)
+            ObjectDetectorProcessor(this, customObjectDetectorOptions, Catalog(), {})
           )
         }
         CUSTOM_AUTOML_OBJECT_DETECTION -> {
@@ -184,7 +185,7 @@ class LivePreviewActivity :
               customAutoMLODTLocalModel
             )
           cameraSource!!.setMachineLearningFrameProcessor(
-            ObjectDetectorProcessor(this, customAutoMLODTOptions)
+            ObjectDetectorProcessor(this, customAutoMLODTOptions, Catalog(), {})
           )
         }
         TEXT_RECOGNITION_LATIN -> {
