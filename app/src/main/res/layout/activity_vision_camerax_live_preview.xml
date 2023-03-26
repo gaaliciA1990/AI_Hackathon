@@ -37,8 +37,7 @@
       android:layout_height="60dp"
       app:layout_constraintBottom_toBottomOf="parent"
       android:background="#000"
-      android:orientation="horizontal"
-      android:visibility="invisible">
+      android:orientation="horizontal">
 
     <ToggleButton
         android:id="@+id/facing_switch"
