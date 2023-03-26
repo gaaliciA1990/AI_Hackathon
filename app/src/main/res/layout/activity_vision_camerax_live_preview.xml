@@ -27,6 +27,7 @@
       layout="@layout/settings_style"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:visibility="invisible"
       app:layout_constraintRight_toRightOf="@id/preview_view"
       app:layout_constraintTop_toTopOf="@id/preview_view" />
 
@@ -36,7 +37,8 @@
       android:layout_height="60dp"
       app:layout_constraintBottom_toBottomOf="parent"
       android:background="#000"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+      android:visibility="invisible">
 
     <ToggleButton
         android:id="@+id/facing_switch"

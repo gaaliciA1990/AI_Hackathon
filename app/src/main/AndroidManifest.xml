@@ -61,7 +61,8 @@
         <activity
             android:name=".java.CameraXLivePreviewActivity"
             android:exported="false"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait" >
         </activity>
 
         <activity
