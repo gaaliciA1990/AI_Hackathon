@@ -28,8 +28,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.demo.java.CameraXLivePreviewActivity
-import com.google.mlkit.vision.demo.java.ChooserActivity
+import com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity
 import java.util.ArrayList
 
 class EntryChoiceActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
